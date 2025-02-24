@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,13 +21,13 @@ function getUsers() {
 $users = getUsers();
 
 // Check if users were fetched successfully
-if (!empty($users)) {
-    echo "<ul>"
-    echo "<li><strong>Name:</strong> {$user['name']} -<strong>Username:</strong> {$user['username']}<mailto strong>Email:</strong> {$user['email']}</li>";
+if (count($users) > 0) {
+    for ($i = 0; $i < count($users); $i++) {
+        echo "Name: " . $users[$i]['name'] . '<br>';
+        echo "Username: " . $users[$i]['username'] . "<br>";
+        echo "Phone Number: " . $users[$i]['phone'] . '<br>';
+        echo "Email: " . $users[$i]['email'] . '<br><br>';
     }
-    echo "</ul>";
-} else {
-    echo "<p>No users found.</p>";
 }
 ?>
 
